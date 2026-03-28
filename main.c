@@ -11,7 +11,6 @@ void naive(double *A, double *x, double *y, int n) {
         }
     }
 }
-
 // 优化算法：逐行访问
 void optimized(double *A, double *x, double *y, int n) {
     for (int i = 0; i < n; i++) y[i] = 0.0;
