@@ -23,11 +23,11 @@ double optimized_sum(double *a, int n) {
 }
 
 int main() {
-    // 测试规模（2的幂次，覆盖 L1/L2/L3 及远超 L3）
+    // 测试规模
     int sizes[] = {1024, 4096, 16384, 65536, 262144, 1048576, 4194304, 16777216};
     int num_sizes = sizeof(sizes) / sizeof(sizes[0]);
 
-    // 重复次数：小规模多重复，大规模少重复，保证总运行时间稳定
+    // 重复次数
     int repeats[] = {20000, 10000, 5000, 2000, 1000, 500, 200, 100};
 
     LARGE_INTEGER freq, start, end;
@@ -46,7 +46,7 @@ int main() {
             a[i] = i;
         }
 
-        //验证一次正确性（打印一次和）
+        //验证一次正确性
         if (idx == 0) {
             double sum_check = naive_sum(a, n);
             double expected = (double)n * (n - 1) / 2.0;
